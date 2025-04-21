@@ -16,12 +16,10 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4     # Updated to v4
 
     - name: Set up Swap Space
       uses: pierotofy/set-swap-space@master
-      with:
-        swap-size-gb: 16
 
     - name: Install Dependencies
       run: |
@@ -79,7 +77,7 @@ jobs:
           --output twrp_vendor_boot.img
 
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4     # Updated to v4
       with:
         name: TWRP-vendor_boot-${DEVICE_CODENAME}.img
         path: twrp_vendor_boot.img
